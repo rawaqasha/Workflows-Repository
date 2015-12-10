@@ -1,0 +1,54 @@
+# Workflow Information
+
+General:
+
+  WF-Title: Neighbour Joining
+  version: 1.0
+  Description: The workflow performs identification of Leishmania species using the neighbour joining method. It was designed in the e-Science Central system.
+  instruction-file: NJ-instruction
+  WF-Diagram: JN-png
+
+WF-Tasks:
+
+  No-of-tasks: 11
+  Tasks: {importFile: 2, filejoin: 1, filterDuplicate: 1, clustalw: 1, Mega-NJ: 1, exportFile: 3, csvExport: 2}
+  Dependency-Libs: {java1.7: all, clustalw-lib: clustalw, wine1.6: Mega-NJ, Mega-CC: Mega-NJ} 
+
+Blueprint:
+
+  single-container: 
+    blueprint-name: realeScWF-1host.yaml
+    Docker-image: 
+      name: rawa/nj:01
+      size: 1.56G
+      OS-type: ubuntu14.04
+      tools: {wget, Dependencies-Libs, all-Tasks}
+  multiple-containers:
+    blueprint-name: realeScWF-inhost.yaml
+    Docker-images:
+      names: {'rawa/importfile', 'rawa/filejoin', 'rawa/filterdupl', 'rawa/clustalw', 'rawa/mega-cc', 'rawa/exportfile', 'csvexport'} 
+      sizes: {567.4M, 568.4M, 568.5M, 578.5M, 1.529G, 567.4MS, 568.4M}
+      OS-types: ubuntu14.4
+      tools: 
+
+Input:
+
+  input-file(s): {'file1', 'file2'}
+  description: Two csv files for the two importfile tasks
+  types: csv
+
+Outputs:
+
+  output-folder: '~/blueprint-name'
+  output-file(s): {'analysis-output', 'consensus-output', 'summary-info', 'removed-sequences', 'sequence-map'}
+  description:
+  types: {' ', ' ', ' ', csv-file, csv-file}
+
+Execution-Environment:
+
+  Cloudify-version: 3.2
+  Docker-version: 
+  OS-type: ubuntu14.04
+  Disk-space: 
+  RAM:
+

@@ -1,0 +1,10 @@
+-copy your input file(s) to ~/input
+
+Inside a terminal, run:
+ - svn checkout https://github.com/rawaqasha/
+ 
+ - ./docker-install.sh
+
+ - . ./cloudify-install.sh
+
+ - ./WF-deploy.sh
