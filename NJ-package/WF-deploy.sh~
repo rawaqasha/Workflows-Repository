@@ -6,27 +6,24 @@ if [ ! -f TSCA-WFDS/NJ-package.tar.gz ]; then
 fi
 
 #unzip Workflow
-tar -zxvf TOSCA-WFDS/NJ-package.tar.gz -C TOSCA-WFDS/
+tar -zxvf TOSCA-WFDS/NJ-package.tar.gz
 
 #fill input file
-#dir=$(pwd)
-if [[ ! -d ~/wf-input ]]; then
-   mkdir ~/wf-input
-   cp TOSCA-WFDS/file1.txt ~/wf-input/file1.txt
-   cp TOSCA-WFDS/file2.txt ~/wf-input/file2.txt
+dir=$(pwd)
+if [ ! -d ~/wf-input ]; then
+   mkdir wf-input
+   cp ${dir}/TOSCA-WFDS/NJ-package/file1.txt ~/wf-input/file1.txt
+   cp ${dir}/TOSCA-WFDS/NJ-package/file2.txt ~/wf-input/file2.txt
 fi
 
 sudo service docker start
 
 echo "deploy the workflow"
-if [[ -d ~/realeScWF-inhost ]]; then
+if [ -d ~/realeScWF-inhost ]; then
    echo "previous workflow execution exists and will be deleted"
    rm -r ~/realeScWF-inhost
-else 
-   #mkdir ~/realeScWF-inhost
-   cp TOSCA-WFDS/realeScWF-inhost.yaml .
 fi
 
-cfy local init --install-plugins -p TOSCA-WFDS/realeScWF-inhost.yaml
+cfy local init --install-plugins -p TOSCA-WFDS/NJ-package/realeScWF-inhost.yaml
 
 cfy local execute -w install

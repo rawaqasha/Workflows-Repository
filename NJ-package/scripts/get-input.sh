@@ -14,6 +14,6 @@ sudo docker exec -it ${CONTAINER_ID} [ ! -d root/${blueprint} ] && sudo docker e
 
 ctx logger info "copy the input ${input_dir}/${inputFile}"
 
-cat ${input_dir}/${inputFile} | docker exec -i ${CONTAINER_ID} sh -c 'cat > /root/'${blueprint}/${file}
+cat ${input_dir}/${inputFile} | sudo docker exec -i ${CONTAINER_ID} sh -c 'cat > /root/'${blueprint}/${file}
 
 
