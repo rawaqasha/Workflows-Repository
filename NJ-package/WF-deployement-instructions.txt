@@ -4,4 +4,4 @@
   - download wf-install.sh from NJ-WF using the url:
     wget https://github.com/rawaqasha/Workflows-Repository/raw/master/NJ-package/wf-install.sh
  
-  - . ./NJ-install.sh
+  - . ./wf-install.sh
