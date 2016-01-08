@@ -10,7 +10,7 @@ if [[ -z ${Dock} ]]; then
    echo "Docker installation"
    if [ ! -f TSCA-WFDS/docker-installation.sh ]; then
       wget -O TOSCA-WFDS/docker-installation.sh https://github.com/rawaqasha/Workflows-Repository/raw/master/docker-installation.sh
-      chmod u+x /workflow/docker-installation.sh
+      chmod u+x TOSCA-WFDS/docker-installation.sh
    fi
    ./TOSCA-WFDS/docker-installation.sh
 fi
@@ -21,7 +21,7 @@ echo "${cloudify}"
 if [[ -z ${cloudify} ]]; then
    echo "Cloudify installation"
    wget -O TOSCA-WFDS/cloudify-install.sh https://github.com/rawaqasha/Workflows-Repository/raw/master/cloudify-install.sh
-   chmod u+x /TOSCA-WFDS/cloudify-install.sh
+   chmod u+x TOSCA-WFDS/cloudify-install.sh
    . ./TOSCA-WFDS/cloudify-install.sh
 fi
 
