@@ -30,4 +30,4 @@ fi
 echo "workflow deployment"
 wget -O TOSCA-WFDS/WF-deploy.sh https://github.com/rawaqasha/Workflows-Repository/raw/master/NJ-package/WF-deploy.sh
 chmod u+x TOSCA-WFDS/WF-deploy.sh
-#./TOSCA-WFDS/WF-deploy.sh
+./TOSCA-WFDS/WF-deploy.sh
