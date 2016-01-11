@@ -35,4 +35,4 @@ else
 fi
 
 
-#cfy local execute -w install
+cfy local execute -w install
