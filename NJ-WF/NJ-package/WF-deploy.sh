@@ -2,7 +2,7 @@
 
 echo "download workflow blueprint"
 if [ ! -f TSCA-WFDS/NJ-package.tar.gz ]; then
-   wget -O TOSCA-WFDS/NJ-package.tar.gz https://github.com/rawaqasha/Workflows-Repository/raw/master/NJ-package/NJ-package.tar.gz
+   wget -O TOSCA-WFDS/NJ-package.tar.gz https://github.com/rawaqasha/Workflows-Repository/raw/master/NJ-WF/NJ-package/NJ-package.tar.gz
 fi
 
 #unzip Workflow
