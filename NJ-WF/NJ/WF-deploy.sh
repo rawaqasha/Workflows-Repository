@@ -11,7 +11,7 @@ tar -zxvf TOSCA-WFDS/NJ.tar.gz -C TOSCA-WFDS/
 
 #fill input file
 echo "please fill the input file for the workflow"
-nano TOSCA-WFDS/input.yaml
+nano TOSCA-WFDS/NJ/input.yaml
 
 sudo service docker start
 
@@ -21,9 +21,9 @@ if [[ ${wf} == 1 ]]; then
       echo "previous workflow execution exists and will be deleted"
       rm -r ~/realeScWF-inhost
    else 
-      cp TOSCA-WFDS/realeScWF-inhost.yaml .
+      cp TOSCA-WFDS/NJ/realeScWF-inhost.yaml .
    fi
-  cfy local init --install-plugins -p TOSCA-WFDS/realeScWF-inhost.yaml
+  cfy local init --install-plugins -p TOSCA-WFDS/NJ/realeScWF-inhost.yaml
 else
    if [[ -d ~/realeScWF-1host ]]; then
       echo "previous workflow execution exists and will be deleted"
@@ -31,7 +31,7 @@ else
    else 
       cp TOSCA-WFDS/realeScWF-1host.yaml .
    fi
-  cfy local init --install-plugins -p TOSCA-WFDS/realeScWF-1host.yaml
+  cfy local init --install-plugins -p TOSCA-WFDS/NJ/realeScWF-1host.yaml
 fi
 
 
