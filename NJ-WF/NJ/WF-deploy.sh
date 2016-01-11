@@ -21,7 +21,7 @@ if [[ ${wf} == 1 ]]; then
       echo "previous workflow execution exists and will be deleted"
       rm -r ~/realeScWF-inhost
    else 
-      cp TOSCA-WFDS/NJ/realeScWF-inhost.yaml .
+      cp TOSCA-WFDS/realeScWF-inhost.yaml .
    fi
   cfy local init --install-plugins -p TOSCA-WFDS/realeScWF-inhost.yaml
 else
