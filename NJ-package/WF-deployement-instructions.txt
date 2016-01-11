@@ -1,7 +1,0 @@
--copy your input 2 files to ~/input or later specify the files for workflow deployment
-
-- Inside a terminal, run:
-  - download wf-install.sh from NJ-WF using the url:
-    wget https://github.com/rawaqasha/Workflows-Repository/raw/master/NJ-package/wf-install.sh
- 
-  - . ./wf-install.sh
