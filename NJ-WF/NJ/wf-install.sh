@@ -17,20 +17,21 @@ if [[ -z ${Dock} ]]; then
 fi
 
 #Cloudify configuration and installation
-cloudify=$(which cfy)
-echo "${cloudify}"
-if [[ -z ${cloudify} ]]; then
+
+if [[ ! -d ~/WF-Cloudify ]]; then
    echo "Cloudify installation"
    wget -O TOSCA-WFDS/cloudify-install.sh https://github.com/rawaqasha/Workflows-Repository/raw/master/cloudify-install.sh
    chmod u+x TOSCA-WFDS/cloudify-install.sh
    . ./TOSCA-WFDS/cloudify-install.sh
+else 
+   source ~/WF-Cloudify/bin/activate
 fi
 
 
 #workflow deployment
 echo "workflow deployment"
 
-wget -O TOSCA-WFDS/WF-deploy.sh https://github.com/rawaqasha/Workflows-Repository/raw/master/NJ-WF/WF-deploy.sh
+wget -O TOSCA-WFDS/WF-deploy.sh https://github.com/rawaqasha/Workflows-Repository/raw/master/NJ-WF/NJ/WF-deploy.sh
 chmod u+x TOSCA-WFDS/WF-deploy.sh
 if [[ ${WF} == 1 ]]; then
    echo "NJ deployment with Multiple Containers"
@@ -39,4 +40,3 @@ else
    echo "NJ deployment with Single Container"
    ./TOSCA-WFDS/WF-deploy.sh 2
 fi
-
