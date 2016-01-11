@@ -1,0 +1,5 @@
+input-dir: '~/input'      #folder path of the input files"
+input-file1: 'File1.txt'  #first input file
+input-File2: 'File2.txt'  #second input file
+docker-image: 'rawa/nj'   #Docker image
+

@@ -1,0 +1,10 @@
+This pachage for Nieghbour Joining Workflow includes input data files to execute the workflow. just follow the instructions
+
+To use this package:
+1- download wf-install.sh from NJ-WF using the url and run it:
+  - Inside a terminal, type:
+    wget https://github.com/rawaqasha/Workflows-Repository/raw/master/NJ-WF/NJ-package/wf-install.sh
+ 
+  - . ./wf-install.sh
+  
+2- After successfully running the workflow, five output files can be found in ~/realeScWF-inhots folder

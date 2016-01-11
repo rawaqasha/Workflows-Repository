@@ -1,0 +1,11 @@
+This folder includes all files and scripts to deploy Nieghbour Joining workflow on Multiple Docker containers. Please follow the following:
+
+1- Create ~/input folder and put your input files in.
+
+2- download wf-install.sh from NJ-WF using the url and run it:
+  - Inside a terminal, type:
+    wget https://github.com/rawaqasha/Workflows-Repository/raw/master/NJ-WF/NJ-package/wf-install.sh
+ 
+  - . ./wf-install.sh
+  
+2- After successfully running the workflow, five output files can be found in ~/realeScWF-inhots folder
