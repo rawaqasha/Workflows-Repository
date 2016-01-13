@@ -9,7 +9,7 @@ fi
 tar -zxvf TOSCA-WFDS/NJ-package.tar.gz -C TOSCA-WFDS/
 
 #fill input file
-#dir=$(pwd)
+
 if [[ ! -d ~/wf-input ]]; then
    mkdir ~/wf-input
    cp TOSCA-WFDS/file1.txt ~/wf-input/file1.txt
